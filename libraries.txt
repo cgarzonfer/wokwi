@@ -1,0 +1,13 @@
+# Wokwi Library List
+# See https://docs.wokwi.com/guides/libraries
+
+# Automatically added based on includes:
+LiquidCrystal
+
+DHT sensor library
+LowPower_LowPowerLab
+LiquidCrystal I2C
+Adafruit MPU6050
+MD_MAX72xx
+Servo
+Grove 4-Digit Display

@@ -1,0 +1,191 @@
+{
+  "version": 1,
+  "author": "Carlos Garzón",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": -41.4, "left": -74, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 192.6, "left": -58.2, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -105.3,
+      "left": 273,
+      "attrs": { "humidity": "67", "temperature": "5.9" }
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "stepper1",
+      "top": -321.89,
+      "left": -287.12,
+      "attrs": { "size": "1", "display": "steps", "arrow": "red" }
+    },
+    { "type": "wokwi-a4988", "id": "drv1", "top": 4.8, "left": -244.8, "attrs": {} },
+    {
+      "type": "wokwi-lcd2004",
+      "id": "lcd1",
+      "top": -310.4,
+      "left": 312.8,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot1",
+      "top": 33.8,
+      "left": 277.4,
+      "attrs": { "travelLength": "30" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text1",
+      "top": 48,
+      "left": 374.4,
+      "attrs": { "text": "Wind Speed" }
+    },
+    { "type": "wokwi-mpu6050", "id": "imu1", "top": 215.02, "left": 261.52, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -310.8,
+      "left": -44.2,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -235.2,
+      "left": -48.55,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -310.8,
+      "left": 3.8,
+      "attrs": { "color": "orange" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -310.8,
+      "left": 51.8,
+      "attrs": { "color": "limegreen" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -235.2,
+      "left": -0.55,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": -235.2,
+      "left": 47.45,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text2",
+      "top": -336,
+      "left": -9.6,
+      "attrs": { "text": "Sea state", "size": "30" }
+    },
+    {
+      "type": "wokwi-max7219-matrix",
+      "id": "matrix1",
+      "top": -105,
+      "left": 330.21,
+      "attrs": { "chain": "1" }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo1",
+      "top": -136.4,
+      "left": 489.6,
+      "attrs": { "hornColor": "#000088" }
+    },
+    {
+      "type": "wokwi-tm1637-7segment",
+      "id": "sevseg1",
+      "top": -9.64,
+      "left": 496.63,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text3",
+      "top": -124.8,
+      "left": 556.8,
+      "attrs": { "text": "Cooling" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text4",
+      "top": -28.8,
+      "left": 355.2,
+      "attrs": { "text": "Heating" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text5",
+      "top": -9.6,
+      "left": 528,
+      "attrs": { "text": "Inside Temp." }
+    }
+  ],
+  "connections": [
+    [ "uno:GND.2", "bb1:bn.14", "black", [ "v0" ] ],
+    [ "uno:5V", "bb1:bp.13", "red", [ "v0" ] ],
+    [ "dht1:VCC", "bb1:bp.25", "red", [ "v0" ] ],
+    [ "dht1:GND", "bb1:bn.25", "black", [ "v0" ] ],
+    [ "dht1:SDA", "uno:7", "purple", [ "v96", "h-9.5" ] ],
+    [ "drv1:SLEEP", "drv1:RESET", "green", [ "h-19.2", "v-9.6" ] ],
+    [ "drv1:DIR", "uno:9", "green", [ "h-19.2", "v67.2", "h470.4" ] ],
+    [ "drv1:STEP", "uno:8", "green", [ "h-9.6", "v67.2", "h470.4" ] ],
+    [ "drv1:VDD", "bb1:bp.1", "red", [ "h96.15", "v19.28" ] ],
+    [ "drv1:GND.1", "bb1:bn.1", "black", [ "v0.08", "h86.55", "v19.2" ] ],
+    [ "drv1:2B", "stepper1:B-", "red", [ "h38.55", "v-172.72" ] ],
+    [ "drv1:1B", "stepper1:B+", "green", [ "h0" ] ],
+    [ "drv1:1A", "stepper1:A+", "green", [ "h0" ] ],
+    [ "drv1:2A", "stepper1:A-", "green", [ "h0" ] ],
+    [ "pot1:VCC", "bb1:bp.18", "red", [ "h0" ] ],
+    [ "pot1:GND", "bb1:bn.19", "black", [ "v76.8", "h-417.2" ] ],
+    [ "pot1:SIG", "uno:A0", "yellow", [ "h-28.8", "v296.8", "h-211.2" ] ],
+    [ "imu1:VCC", "bb1:bp.21", "red", [ "v-67.2", "h-134.32" ] ],
+    [ "imu1:GND", "bb1:bn.22", "black", [ "v-57.6", "h-115.12" ] ],
+    [ "imu1:SCL", "uno:A5", "green", [ "v-19.2", "h-67.12", "v153.6" ] ],
+    [ "imu1:SDA", "uno:A4", "green", [ "v-28.8", "h-67.12", "v182.4", "h-9.6" ] ],
+    [ "bb1:bp.11", "bb1:tp.11", "red", [ "v0" ] ],
+    [ "bb1:bn.12", "bb1:tn.12", "black", [ "v0" ] ],
+    [ "lcd1:GND", "bb1:tn.24", "black", [ "h0" ] ],
+    [ "lcd1:VCC", "bb1:tp.25", "red", [ "h0" ] ],
+    [ "lcd1:SCL", "uno:A5.2", "green", [ "h-48", "v134.7", "h-182.4" ] ],
+    [ "lcd1:SDA", "uno:A4.2", "green", [ "h-67.2", "v125", "h-153.6" ] ],
+    [ "led1:C", "bb1:tn.1", "black", [ "v0" ] ],
+    [ "led3:C", "bb1:tn.10", "black", [ "v0" ] ],
+    [ "led2:C", "bb1:tn.5", "black", [ "v0" ] ],
+    [ "r3:2", "uno:6", "blue", [ "h0" ] ],
+    [ "r2:2", "uno:12", "blue", [ "h0", "v37.2", "h28.8" ] ],
+    [ "led3:A", "r3:1", "green", [ "v0" ] ],
+    [ "led1:A", "r1:1", "green", [ "v0" ] ],
+    [ "led2:A", "r2:1", "green", [ "v0" ] ],
+    [ "matrix1:V+", "bb1:tp.23", "red", [ "h0", "v-28.8", "h-259.2" ] ],
+    [ "matrix1:GND", "bb1:tn.21", "black", [ "h19.2", "v-48", "h-278.4" ] ],
+    [ "matrix1:CS", "uno:10", "blue", [ "h9.6", "v67.2", "h-355.2" ] ],
+    [ "matrix1:DIN", "uno:11", "green", [ "h19.2", "v86.4", "h-403.2", "v-9.6" ] ],
+    [ "matrix1:CLK", "uno:13", "yellow", [ "h0", "v48", "h-384" ] ],
+    [ "servo1:GND", "bb1:bn.23", "black", [ "h-9.6", "v115.2", "h-9.6" ] ],
+    [ "servo1:V+", "bb1:bp.24", "red", [ "h0", "v67.3", "h-268.8", "v86.4" ] ],
+    [ "servo1:PWM", "uno:3", "green", [ "h-19.2", "v240.2", "h-307.2" ] ],
+    [ "r1:2", "uno:5", "blue", [ "h0", "v18", "h172.8" ] ],
+    [ "sevseg1:VCC", "uno:5V", "red", [ "h19.2", "v412.8", "h-595.2" ] ],
+    [ "sevseg1:GND", "uno:GND.3", "black", [ "h-19.2", "v364.8", "h-528" ] ],
+    [ "sevseg1:CLK", "uno:2", "green", [ "h38.4", "v163.2", "h-528", "v-9.6" ] ],
+    [ "sevseg1:DIO", "uno:4", "green", [ "h28.8", "v144", "h-537.6" ] ]
+  ],
+  "dependencies": {}
+}
