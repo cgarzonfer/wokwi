@@ -2,6 +2,13 @@
 En esta actividad se ha utilizado el dispositivo programado en la Actividad 1, el cual simula una boya marina, y se ha ampliado su funcionalidad. En concreto, se ha añadido un algoritmo de control de la temperatura interior para mantenerla a una determinada temperatura de consigna con un margen de +/- 3ºC.
 El dispositivo mejorado puede verse en este enlace al [proyecto Wokwi](https://wokwi.com/projects/432228479492520961)
 
+## Repaso de la funcionalidad implementada en la Actividad 1
+
+En la primera actividad habíamos implementado la siguiente funcionalidad en el dispositivo:
+-
+- Un anemómetro (simulado) proporcionaba la dirección y velocidad del viento en cada momento. La dirección se generaba de forma aleatoria y la velocidad manualmente a través de un slider.
+- 
+
 ## Elementos añadidos al dispositivo respecto a la Actividad 1
 Al objeto de implementar de la nueva funcionalidad, se han añadido los siguientes elmentos al prototipo:
 - Un display de 4 dígitos para mostrar la temperatura interior con dos cifras decimales.
