@@ -1,4 +1,5 @@
 # Actividad 2 - Boya climática
+El objetivo de esta segunda actividad es realizar una pequeña aplicación de medición, control, actuación y presentación del clima que se ejecute en el dispositivo programable.
 En esta actividad se ha utilizado el dispositivo programado en la Actividad 1, el cual simula una boya marina, y se ha ampliado su funcionalidad. En concreto, se ha añadido un algoritmo de control de la temperatura interior para mantenerla a una determinada temperatura de consigna con un margen de +/- 3ºC.
 El dispositivo mejorado puede verse en este enlace al [proyecto en Wokwi](https://wokwi.com/projects/432228479492520961).
 
@@ -11,8 +12,7 @@ En la primera actividad habíamos implementado la siguiente funcionalidad en el 
 * Un conjunto de 3 LEDs (rojo-amarillo-verde) indica el estado del mar, el cual se determina por los valores medidos de viento y oleaje.
 
 ## Elementos añadidos al dispositivo respecto a la Actividad 1
-El objetivo de esta segunda actividad es realizar una pequeña aplicación de medición, control, actuación y presentación del clima que se ejecute en el dispositivo programable.
-Al objeto de implementar la nueva funcionalidad requerida en esta segunda actividad, se han añadido los siguientes elmentos al prototipo:
+Al objeto de implementar la nueva funcionalidad requerida en esta segunda actividad, se han añadido los siguientes elementos al prototipo:
 - Un display de 4 dígitos para mostrar la temperatura interior con dos cifras decimales.
 - Un LED de 8x8 puntos tipo MAX7219 que simula la activación del sistema de calefacción.
 - Un motor servo con una palanca que simula la activación del sistema de refrigeración.
@@ -23,7 +23,7 @@ El montaje final queda como se muestra en la imagen.
 
 
 ## Funcionamiento del algoritmo de control
-Dado que el sensor de temperatura DHT22 disponible en Wokwi tiene que manipularse manualmente, se opta por distinguir entre una temperatura exterior (tempExterior), la del ambiente, que es medida por el sensor, y una temperatura interior (tempInterior) del recinto donde se alojan las baterías. De manera natural, la temperatura interior tendería a aproximarse a la temperatura exterior. Esto se simula incrementando o decrementando la temperatura interior según la temperatura exterior y lo hace a una velocidad de 0.5ºC cada 500ms. Sin intervención de sistema de climatización, la temperatura interior tiende a igualarse a la exterior, lo cual se simula con este código:
+Dado que el sensor de temperatura DHT22 disponible en Wokwi tiene que manipularse manualmente, se opta por distinguir entre una temperatura exterior (tempExterior), la del ambiente, que es medida por el sensor, y una temperatura interior (tempInterior) del recinto donde se alojan las baterías. De manera natural, la temperatura interior tendería a aproximarse a la temperatura exterior. Esto se simula incrementando o decrementando la temperatura interior según la temperatura exterior y lo hace a una velocidad de 0.5ºC cada 500ms. Es decir, sin intervención de sistema de climatización, la temperatura interior tiende a igualarse a la exterior, lo cual se simula con este código:
 ```
  if (tempInterior > temperature){
     tempInterior = tempInterior - 0.5;
@@ -31,7 +31,7 @@ Dado que el sensor de temperatura DHT22 disponible en Wokwi tiene que manipulars
     tempInterior = tempInterior + 0.5;
   }
 ```
-Para el funcionamiento del sistema de climatización, se establece una temperatura de consigna (tempConsigna) de 25ºC y un margen (tempMargin) de +/- 3ºC. Además, el sistema tiene dos modos de funcionamiento, similar a los equipos de climatización reales, un modo calefacción (en invierno) y un modo refrigeración (en verano). Por ejemplo, una bomba de calor de aerotermia puede funcionar en ambos modos pero necesita una válvula 4 vías para cambiar el ciclo que hace el refrigerante según el caso ([cómo funciona una bomba de calor](https://learn.apolloheatpumps.com/es/como-funciona-una-bomba-de-calor/))
+Para el funcionamiento del sistema de climatización, se establece una temperatura de consigna (tempConsigna) de 25ºC y un margen (tempMargin) de +/- 3ºC. Además, el sistema tiene dos modos de funcionamiento, similar a los equipos de climatización reales, un modo de calefacción (en invierno) y un modo de refrigeración (en verano). Por ejemplo, una bomba de calor de aerotermia puede funcionar en ambos modos pero necesita una válvula 4 vías para cambiar el ciclo que hace el refrigerante según el caso ([cómo funciona una bomba de calor](https://learn.apolloheatpumps.com/es/como-funciona-una-bomba-de-calor/))
 Para simular esto, el código activa el modo invierno o el modo verano dependiendo de la temperatura exterior en relación a la temperatura de consigna.
 ```
 if (tempExterior<tempConsigna){
