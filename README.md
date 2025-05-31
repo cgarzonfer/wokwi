@@ -8,6 +8,7 @@ En la primera actividad habíamos implementado la siguiente funcionalidad en el 
 * Un anemómetro (simulado) proporcionaba la dirección y velocidad del viento en cada momento. La dirección se generaba de forma aleatoria y la velocidad manualmente a través de un slider.
 * Un acelerómetro para medir la altura de ola.
 * Una pantalla LCD para mostrar en tiempo real la medición de temperatura, dirección y velocidad del viento y altura de ola.
+* Un conjunto de 3 LEDs (rojo-amarillo-verde) indica el estado del mar, el cual se determina por los valores medidos de viento y oleaje.
 
 ## Elementos añadidos al dispositivo respecto a la Actividad 1
 El objetivo de esta segunda actividad es realizar una pequeña aplicación de medición, control, actuación y presentación del clima que se ejecute en el dispositivo programable.
@@ -84,4 +85,9 @@ Establecemos una temperatura exterior de 24ºC, la cual queda dentro del rango a
 
 <img src="Caso_3b.png" width="300">
 
+## Conclusiones
+En esta actividad se han logrado los siguientes objetivos:
+1. A partir del conocimiento del estado del clima mediante la medición de sus indicadores fundamentales se determinan las acciones de control y actuación (calentar o enfriar) que garanticen que el sistema de baterias se mantenga alrededor de la temperatura de consigna (25ºC).
+2. Aplicar algoritmos de procesamiento de la información suministrada por los sensores para decidir sobre las acciones a tomar con alto grado de fiabilidad.
+3. Presentar la información del estado y control del clima mediante un display LCD de forma ergonómica y amigable para el usuario, así como herramientas para visualización del funcionamiento correcto de la calefacción y la refrigeración.   
 
