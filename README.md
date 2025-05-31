@@ -3,14 +3,14 @@ En esta actividad se ha utilizado el dispositivo programado en la Actividad 1, e
 El dispositivo mejorado puede verse en este enlace al [proyecto Wokwi](https://wokwi.com/projects/432228479492520961)
 
 ## Repaso de la funcionalidad implementada en la Actividad 1
-
 En la primera actividad habíamos implementado la siguiente funcionalidad en el dispositivo:
--
-- Un anemómetro (simulado) proporcionaba la dirección y velocidad del viento en cada momento. La dirección se generaba de forma aleatoria y la velocidad manualmente a través de un slider.
-- 
+* Un sensor de temperatura y humedad (DHT22)
+* Un anemómetro (simulado) proporcionaba la dirección y velocidad del viento en cada momento. La dirección se generaba de forma aleatoria y la velocidad manualmente a través de un slider.
+* Un acelerómetro para medir la altura de ola.
+* Una pantalla LCD para mostrar en tiempo real la medición de temperatura, dirección y velocidad del viento y altura de ola.
 
 ## Elementos añadidos al dispositivo respecto a la Actividad 1
-Al objeto de implementar de la nueva funcionalidad, se han añadido los siguientes elmentos al prototipo:
+Al objeto de implementar la nueva funcionalidad requerida en esta segunda actividad, se han añadido los siguientes elmentos al prototipo:
 - Un display de 4 dígitos para mostrar la temperatura interior con dos cifras decimales.
 - Un LED de 8x8 puntos tipo MAX7219 que simula la activación del sistema de calefacción.
 - Un motor servo con una palanca que simula la activación del sistema de refrigeración.
