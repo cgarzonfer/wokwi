@@ -1,6 +1,6 @@
 # Actividad 2 - Boya climática
 En esta actividad se ha utilizado el dispositivo programado en la Actividad 1, el cual simula una boya marina, y se ha ampliado su funcionalidad. En concreto, se ha añadido un algoritmo de control de la temperatura interior para mantenerla a una determinada temperatura de consigna con un margen de +/- 3ºC.
-El dispositivo mejorado puede verse en este enlace al [proyecto Wokwi](https://wokwi.com/projects/432228479492520961)
+El dispositivo mejorado puede verse en este enlace al [proyecto en Wokwi](https://wokwi.com/projects/432228479492520961).
 
 ## Repaso de la funcionalidad implementada en la Actividad 1
 En la primera actividad habíamos implementado la siguiente funcionalidad en el dispositivo:
