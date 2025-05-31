@@ -76,6 +76,6 @@ Establecemos una temperatura exterior de 40ºC, la cual está por encima de la t
 ### Caso 3 - Temperatura exterior dentro del rango admisible
 Establecemos una temperatura exterior de 24ºC, la cual queda dentro del rango admisible. En este caso no se activa ni la calefaccion ni la refrigeración.
 
-<img src="Caso_3.png" width="300">
+<img src="Caso_3b.png" width="300">
 
 
