@@ -10,6 +10,7 @@ En la primera actividad habíamos implementado la siguiente funcionalidad en el 
 * Una pantalla LCD para mostrar en tiempo real la medición de temperatura, dirección y velocidad del viento y altura de ola.
 
 ## Elementos añadidos al dispositivo respecto a la Actividad 1
+El objetivo de esta segunda actividad es realizar una pequeña aplicación de medición, control, actuación y presentación del clima que se ejecute en el dispositivo programable.
 Al objeto de implementar la nueva funcionalidad requerida en esta segunda actividad, se han añadido los siguientes elmentos al prototipo:
 - Un display de 4 dígitos para mostrar la temperatura interior con dos cifras decimales.
 - Un LED de 8x8 puntos tipo MAX7219 que simula la activación del sistema de calefacción.
