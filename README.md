@@ -54,11 +54,14 @@ if ((tempInterior<(tempConsigna-tempMargin))&&winter){
 ```
 Como se observa en el código anterior, se asume que el rendimiento del equipo de calefación (refrigeración) es de +1ºC (-1ºC) cada 500ms. La activación del modo calefacción se representa en el dispositivo mediante el LED 8x8 (mx) y la refrigeracion mediante la palanca adosada al servomotor (myservo).
 
-## Test de prueba
+## Tests de prueba
 Realizamos un test del dispositivo probando los siguientes casos:
-### Caso 1 - Temperatura menor a la temperatura de consigna
-Establecemos una temperatura exterior de 9ºC, la cual está por debajo de la temperatura de consigna (25ºC), lo cual activa el flag "winter". La temperatura interior comienza a bajar aproximándose a la temperatura exterior. Sin embargo, cuando llega a los 22ºC (25ºC-3ºC) se activa la calefacción e impide que baje más la temperatura. 
-![imagen](Caso_1.png|width=100)
-<img src="https://github.com/favicon.ico" width="48">
-<img src="Caso_1.png" width="48">
+### Caso 1 - Temperatura exterior menor a la temperatura de consigna
+Establecemos una temperatura exterior de 9ºC, la cual está por debajo de la temperatura de consigna (25ºC), lo cual activa el flag "winter". La temperatura interior comienza a bajar aproximándose a la temperatura exterior. Sin embargo, cuando llega a los 22ºC (25ºC-3ºC) se activa la calefacción, la cual impide que baje más la temperatura.
+<img src="Caso_1.png" width="100">
+### Caso 2 - Temperatura exterior mayor a la temperatura de consigna
+Establecemos una temperatura exterior de 40ºC, la cual está por encima de la temperatura de consigna (25ºC), lo cual activa el flag "summer". La temperatura interior comienza a subir aproximándose a la temperatura exterior. Sin embargo, cuando llega a los 28ºC (25ºC+3ºC) se activa la refrigeración (ver palanca del servomotor), la cual impide que suba más la temperatura.
+<img src="Caso_2.png" width="100">
+
+
 
