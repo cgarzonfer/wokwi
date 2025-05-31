@@ -70,10 +70,12 @@ Establecemos una temperatura exterior de 9ºC, la cual está por debajo de la te
 
 ### Caso 2 - Temperatura exterior mayor a la temperatura de consigna
 Establecemos una temperatura exterior de 40ºC, la cual está por encima de la temperatura de consigna (25ºC), lo cual activa el flag "summer". La temperatura interior comienza a subir aproximándose a la temperatura exterior. Sin embargo, cuando llega a los 28ºC (25ºC+3ºC) se activa la refrigeración (ver palanca del servomotor), la cual impide que suba más la temperatura.
+
 <img src="Caso_2.png" width="300">
 
 ### Caso 3 - Temperatura exterior dentro del rango admisible
 Establecemos una temperatura exterior de 24ºC, la cual queda dentro del rango admisible. En este caso no se activa ni la calefaccion ni la refrigeración.
+
 <img src="Caso_3.png" width="300">
 
 
