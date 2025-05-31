@@ -52,4 +52,8 @@ if ((tempInterior<(tempConsigna-tempMargin))&&winter){
    myservo.write(90); 
   }
 ```
-Como se observa en el código anterior, se asume que el rendimiento del equipo de calefación (refrigeración) es de +1ºC (-1ºC) cada 500ms. 
+Como se observa en el código anterior, se asume que el rendimiento del equipo de calefación (refrigeración) es de +1ºC (-1ºC) cada 500ms. La activación del modo calefacción se representa en el dispositivo mediante el LED 8x8 (mx) y la refrigeracion mediante la palanca adosada al servomotor (myservo).
+
+## Test de prueba
+Realizamos un test del dispositivo probando los siguientes casos:
+
