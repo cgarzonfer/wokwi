@@ -17,7 +17,7 @@ Al objeto de implementar la nueva funcionalidad requerida en esta segunda activi
 
 El montaje final queda como se muestra en la imagen.
 
-<img src="prototipo.png" width="300">
+<img src="prototipo.png" width="400">
 
 
 ## Funcionamiento del algoritmo de control
