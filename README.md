@@ -18,4 +18,38 @@ Dado que el sensor de temperatura DHT22 disponible en Wokwi tiene que manipulars
   }
 ```
 Para el funcionamiento del sistema de climatización, se establece una temperatura de consigna (tempConsigna) de 25ºC y un margen (tempMargin) de +/- 3ºC. Además, el sistema tiene dos modos de funcionamiento, similar a los equipos de climatización reales, un modo calefacción (en invierno) y un modo refrigeración (en verano). Por ejemplo, una bomba de calor de aerotermia puede funcionar en ambos modos pero necesita una válvula 4 vías para cambiar el ciclo que hace el refrigerante según el caso ([cómo funciona una bomba de calor](https://learn.apolloheatpumps.com/es/como-funciona-una-bomba-de-calor/))
-
+Para simular esto, el código activa el modo invierno o el modo verano dependiendo de la temperatura exterior en relación a la temperatura de consigna.
+```
+if (tempExterior<tempConsigna){
+    winter=true;
+    summer=false;
+    myservo.write(90); 
+  } else{
+    winter=false;
+    summer=true;
+    mx.clear();
+  }
+```
+Por otro lado, para evitar la conexión y desconexión continua del sistema a la temperatura de consigna, establecemos el arranque de la calefacción cuando la temperatura baja por debajo de (tempConsigna-tempMargin) y el arranque de la refriferación cuando la temperatura sube por encima de (tempConsigna+tempMargin). Por tanto, existe un rango de temperatura de +/- 3ºC alrededor de la temperatura de consigna (llamado rango muerto) en el cual no se activa ni la calefacción ni la refrigeración. Esto es lógico, porque es un rango de temperatura aceptable y no hace falta gastar energía en el sistema de climatización.
+```
+if ((tempInterior<(tempConsigna-tempMargin))&&winter){
+    for(int x = 0; x < 8 ; x++){
+    for(int y = 0; y < 8 ; y++){
+      mx.setPoint(y, x, true);
+      mx.update();
+    }
+  }
+    tempInterior = tempInterior + 1.0;
+  }
+  if (tempInterior>(tempConsigna+tempMargin)){
+    mx.clear();
+  }
+  if ((tempInterior>(tempConsigna+tempMargin))&&summer){
+    myservo.write(180);
+    tempInterior = tempInterior - 1.0;
+  }
+  if (tempInterior<(tempConsigna-tempMargin)){
+   myservo.write(90); 
+  }
+```
+Como se observa en el código anterior, se asume que el rendimiento del equipo de calefación (refrigeración) es de +1ºC (-1ºC) cada 500ms. 
