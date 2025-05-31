@@ -58,5 +58,5 @@ Como se observa en el código anterior, se asume que el rendimiento del equipo d
 Realizamos un test del dispositivo probando los siguientes casos:
 ### Caso 1 - Temperatura menor a la temperatura de consigna
 Establecemos una temperatura exterior de 9ºC, la cual está por debajo de la temperatura de consigna (25ºC), lo cual activa el flag "winter". La temperatura interior comienza a bajar aproximándose a la temperatura exterior. Sin embargo, cuando llega a los 22ºC (25ºC-3ºC) se activa la calefacción e impide que baje más la temperatura. 
-![imagen](Caso_1.png)
+![imagen](Caso_1.png | width=100)
 
