@@ -1,1 +1,1 @@
-Explicación de la actividad 2.
+#Explicación de la actividad 2.
