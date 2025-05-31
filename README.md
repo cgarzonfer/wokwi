@@ -8,6 +8,7 @@ Al objeto de implementar de la nueva funcionalidad, se han añadido los siguient
 - Un LED de 8x8 puntos tipo MAX7219 que simula la activación del sistema de calefacción.
 - Un motor servo con una palanca que simula la activación del sistema de refrigeración.
 Estos nuevos elementos se ubican bajo la pantalla LCD, como se aprecia en la siguiente imagen.
+![imagen](/assets/myAvatar.png)
 
 
 ## Funcionamiento del algoritmo de control
